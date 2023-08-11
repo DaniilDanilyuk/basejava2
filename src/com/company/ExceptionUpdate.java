@@ -5,3 +5,9 @@ public class ExceptionUpdate extends Exception {
         super(descr);
     }
 }
+class Resume1{
+    public static void main(String[] args) {
+
+    }
+
+}
