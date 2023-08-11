@@ -41,7 +41,7 @@ public class ArrayStorage {
             return resumes[n];
         }
         else {
-            throw new ExceptionUpdate("Havent such element");   
+            throw new ExceptionUpdate("Havent such element");
         }
 
     }
