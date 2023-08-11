@@ -6,6 +6,10 @@ public class ArrayStorage {
     private Resume[]resumes=new Resume[10000];
     private int size = 0;
 
+    public int getSize() {
+        return size;
+    }
+
     public void clear(){
         Arrays.fill(resumes, null);
     }

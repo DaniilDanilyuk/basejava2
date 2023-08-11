@@ -9,6 +9,9 @@ public class Main {
         arrayStorage.getAll();
         arrayStorage.delete(1);
         arrayStorage.getAll();
+        System.out.println(arrayStorage.getSize());
+        arrayStorage.delete(1);
+        arrayStorage.getAll();
 
     }
 
