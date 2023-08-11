@@ -13,7 +13,7 @@ public class Main {
         arrayStorage.delete(1);
         arrayStorage.getAll();
 
-    }
+    }   
 
 
 }
