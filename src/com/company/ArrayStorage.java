@@ -1,5 +1,6 @@
 package com.company;
 
+import java.security.DrbgParameters;
 import java.util.Arrays;
 
 public class ArrayStorage {
@@ -48,6 +49,16 @@ public class ArrayStorage {
             throw new ExceptionUpdate("Havent such element");
         }
 
+    }
+
+    public Resume getName(String name) throws ExceptionUpdate {
+        for(int i=0;i<size;i++){
+            if(name.equals(resumes[i].getName())){
+                return resumes[i];
+            }
+
+        }
+        throw new ExceptionUpdate("Havent such element");
     }
     public void getAll(){
         for(int i=0;i<size;i++){

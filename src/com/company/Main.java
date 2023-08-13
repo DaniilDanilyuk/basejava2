@@ -6,12 +6,8 @@ public class Main {
         arrayStorage.save(new Resume(1,"Dan"));
         arrayStorage.save(new Resume(2,"Bob"));
         arrayStorage.save(new Resume(3,"Bolen"));
-        arrayStorage.getAll();
-        arrayStorage.delete(1);
-        arrayStorage.getAll();
-        System.out.println(arrayStorage.getSize());
-        arrayStorage.delete(1);
-        arrayStorage.getAll();
+
+        System.out.println(arrayStorage.getName("Bob"));
 
     }   
 
