@@ -8,7 +8,7 @@ public class Main {
         arrayStorage.save(new Resume(3,"Bolen"));
 
         System.out.println(arrayStorage.getName("Bob"));
-
+        
     }   
 
 
