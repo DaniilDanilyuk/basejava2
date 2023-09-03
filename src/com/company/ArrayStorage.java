@@ -3,66 +3,26 @@ package com.company;
 import java.security.DrbgParameters;
 import java.util.Arrays;
 
-public class ArrayStorage {
-    private Resume[]resumes=new Resume[10000];
-    private int size = 0;
+public class ArrayStorage extends AbstractArrayStorage{
 
-    public int getSize() {
-        return size;
+
+    @Override
+    protected void insertElement(Resume resume, int index) {
+        resumes[size]= resume;
     }
 
-    public void clear(){
-        Arrays.fill(resumes, null);
-    }
-    public void save(Resume resume){
-        resumes[size]=resume;
-        size+=1;
+
+    @Override
+    protected void fillDeletedElement(int index) {
+        resumes[index] = resumes[size-1];
     }
 
-    public void update(Resume resume, int n) throws ExceptionUpdate {
-        if(n<size){
-            resumes[n] = resume;
-        }
-        else{
-            throw new ExceptionUpdate("Havent such element");
-        }
 
-    }
 
-    public void delete(int n) throws ExceptionUpdate {
-        if(n<size) {
-            for (int i = n; i < size; i++) {
-                resumes[i] = resumes[i + 1];
-            }
-            size -= 1;
-            }
-        else{
-            throw new ExceptionUpdate("Havent such element");
-            }
-        }
 
-    public Resume get(int n) throws ExceptionUpdate {
-        if (n<size) {
-            return resumes[n];
-        }
-        else {
-            throw new ExceptionUpdate("Havent such element");
-        }
-
-    }
-
-    public Resume getName(String name) throws ExceptionUpdate {
-        for(int i=0;i<size;i++){
-            if(name.equals(resumes[i].getName())){
-                return resumes[i];
-            }
-
-        }
-        throw new ExceptionUpdate("Havent such element");
-    }
-    public void getAll(){
-        for(int i=0;i<size;i++){
-            System.out.println(resumes[i].toString());
-        }
+    @Override
+    protected int getIndex(int id) {
+        Resume searchkey = new Resume(id);
+        return Arrays.binarySearch(resumes, 0, size, searchkey);
     }
 }
